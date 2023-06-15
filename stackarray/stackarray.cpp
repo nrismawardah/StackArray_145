@@ -40,4 +40,15 @@ public:
 	bool empty() {
 		return (top == -1)
 	}
+
+	void display() {
+		if (empty()) {
+			cout << "\nStack is empty." << endl;
+		}
+		else {
+			for (int top = 0; top <= top; top++) {
+				cout << stack_array[top] << endl;
+			}
+		}
+	}
 };
