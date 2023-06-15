@@ -20,5 +20,13 @@ public:
 
 		top++;							// Step 2
 		stack_array[top] = element;		// Step 3
+		cout << endl;
+		cout << element << " ditambahkan(pushed" << endl;
+
+		return element;
+	}
+
+	void pop() {
+
 	}
 };
