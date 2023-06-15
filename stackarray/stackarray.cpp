@@ -12,18 +12,19 @@ public:
 		top = -1;
 	}
 
-	string push(string element) {
+	void push() {
 		if (top == 4) {					// Step 1
 			cout << "Number of data exceeds the limit." << endl;
-			return "";
 		}
 
+		cout << "\nEnter a element: ";
+		string element;
+		getline(cin, element);
 		top++;							// Step 2
+
 		stack_array[top] = element;		// Step 3
 		cout << endl;
-		cout << element << " ditambahkan(pushed" << endl;
-
-		return element;
+		cout << element << " ditambahkan(pushed)" << endl;
 	}
 
 	void pop() {
@@ -38,7 +39,7 @@ public:
 
 	// Method for check if data is empty
 	bool empty() {
-		return (top == -1)
+		return (top == -1);
 	}
 
 	void display() {
@@ -52,3 +53,29 @@ public:
 		}
 	}
 };
+
+int main() {
+	StackArray s;
+	while (true) {
+		cout << endl;
+		cout << "\n***Stack Menu***\n";
+		cout << "1. Push\n";
+		cout << "2. Pop\n";
+		cout << "3. Display\n";
+		cout << "4. Exit\n";
+		cout << "\nEnter your choice: ";
+		string input;
+		getline(cin, input);
+		char ch = (input.empty() ? '0' : input[0]);
+		switch (ch) {
+		case '1': {
+			s.push(element);
+			break;
+		}
+		case '2':
+			if (s.empty()) {
+				cout << "\nStack is empty." << endl;
+			}
+		}
+	}
+}
