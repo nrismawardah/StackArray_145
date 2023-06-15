@@ -13,11 +13,12 @@ public:
 	}
 
 	string push(string element) {
-		if (top == 4) {		// Step 1
+		if (top == 4) {					// Step 1
 			cout << "Number of data exceeds the limit." << endl;
 			return "";
 		}
 
-		top++;				// Step 2
+		top++;							// Step 2
+		stack_array[top] = element;		// Step 3
 	}
 };
