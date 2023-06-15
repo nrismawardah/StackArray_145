@@ -27,6 +27,8 @@ public:
 	}
 
 	void pop() {
-
+		if (empty()) {					// Step 1
+			cout << "\nStack is empty. Cannot pop." << endl;
+		}
 	}
 };
