@@ -13,13 +13,15 @@ public:
 	}
 
 	void push() {
-		if (top == 4) {					// Step 1
-			cout << "Number of data exceeds the limit." << endl;
-		}
-
 		cout << "\nEnter a element: ";
 		string element;
 		getline(cin, element);
+
+		if (top == 4) {					// Step 1
+			cout << "Number of data exceeds the limit." << endl;
+			return;
+		}
+
 		top++;							// Step 2
 
 		stack_array[top] = element;		// Step 3
@@ -69,13 +71,24 @@ int main() {
 		char ch = (input.empty() ? '0' : input[0]);
 		switch (ch) {
 		case '1': {
-			s.push(element);
+			s.push();
 			break;
 		}
 		case '2':
 			if (s.empty()) {
 				cout << "\nStack is empty." << endl;
+				break;
 			}
+			s.pop();
+			break;
+		case '3':
+			s.display();
+			break;
+		case '4':
+			return 0;
+		default:
+			cout << "\nInvalid choice." << endl;
+			break;
 		}
 	}
 }
